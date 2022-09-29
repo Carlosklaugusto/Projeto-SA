@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor para led</title>
+</head>
+<body>
+    <h1>Resistor para acender o led:</h1>
+
+    <p>Para calcular o resistor você vai precisar da tensão da fonte(Vt) e a tensão que o led suporta(Vled):</p>
+    R = 
+    Vt:<input type="number" name="Vt" id="Vt"> -
+    Vled:<input type="number" name="Vled" id="Vled"> / 0.02 A
+    <input type="button" value="calcular" onclick="calcular()">
+    <div id="res"></div>
+    
+    <script>
+        function calcular() {
+        var vt = document.getElementById('Vt')
+        var vled = document.getElementById('Vled')
+        var res = document.getElementById('res')
+        const amper = 0.02
+        var fonte = Number(vt.value)
+        var led = Number(vled.value)
+        var saida = (fonte - led) / amper
+                res.innerHTML = `<p>O resistor para acender o led é <strong>${saida} Ohm</strong>.` 
+        }
+    </script>
+    
+</body>
+</html>

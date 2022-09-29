@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cáculo de Resistência</title>
+</head>
+<body>
+    <h1>Resistência equivalente em série:</h1>
+    R1:<input type="number" name="R1" id="R1"> +
+    R2:<input type="number" name="R2" id="R2">
+    <input type="button" value="somar" onclick="somar()">
+    <div id="res"></div>     
+    <script>
+        function somar() {
+        var res1 = document.getElementById('R1')
+        var res2 = document.getElementById('R2')
+        var res = document.getElementById('res')
+        var r1 = Number(res1.value)
+        var r2 = Number(res2.value)
+        var saida = r1 + r2
+        res.innerHTML = `<p>A resistência equivalente entre R1 e R2 é <strong>${saida} Ohm</strong>.`  
+        }
+    </script>
+</body>
+</html>
